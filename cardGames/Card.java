@@ -4,10 +4,8 @@ import java.util.Random;
 
 public class Card {
 	
-	public static final String[] ranks = {null, "A", "2", "3", "4", "5",
-								"6", "7", "8", "9", "10", "J", "Q", "K" };
-	public static final String[] suits ={"Clubs", "Diamonds", 
-										"Hearts", "Spades"};
+	public static final String[] ranks = {null, "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K" };
+	public static final String[] suits ={"Clubs", "Diamonds", "Hearts", "Spades"};
 	private int rank,suit;
 	
 	public Card(){
