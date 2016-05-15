@@ -17,11 +17,11 @@ public class BJ_Game {
 				+ "Computers firstcard is: " + compHand.getCard(0) + "\n\n");
 		System.out.println("And yor hand is:\n" + playerHand[currentHand]);
 		for(;currentHand<=splitCount;currentHand++){// Counts the number of Splits max(4)
-													// After each split start again from the first hand
+							    // After each split start again from the first hand
 			while(playerResult[currentHand]<21){// Breaks when the player is bustet or holds
 				System.out.println("You can choose between: hit, hold");
 				if(playerHand[0].hand.size()==2 && currentHand==0){ //Allows the player to split
-																	//if he has 2 cards of equivalent value
+  										    //if he has 2 cards of equivalent value
 					if(Card.equalsNum(playerHand[currentHand].getCard(0), playerHand[currentHand].getCard(1))){
 						System.out.println("You can split too");
 					}
