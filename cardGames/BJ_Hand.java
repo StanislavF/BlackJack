@@ -43,20 +43,7 @@ public class BJ_Hand {
 	}
 	
 	
-	//Greshen INput - try catch ? 
-	//public static int aceValue(){
-		//Scanner sc = new Scanner(System.in);
-		//System.out.println("You have drown an Ace, choose 1 or 11");
-		//int value=sc.nextInt();
-		//while(true){
-			//if(value==11) break;
-			//if(value==1) break;
-			//System.out.println("Wrong value, try again");
-			//value=sc.nextInt();
-			
-		//}
-		//return value;
-	//}
+
 	
 	public static int cardValue(Card card){
 		switch(card.getRank()){
