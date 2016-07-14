@@ -42,13 +42,14 @@ public class BJ_Hand {
 		hand.remove(index);
 	}
 	
+	//adds 1 card to the hand
 	public void hit(){
 		hand.add(Card.getRandomCard());
 	}
 	
 	
 
-	
+	//calculates the value of a card
 	public static int cardValue(Card card){
 		switch(card.getRank()){
 			case 1: return 0;
