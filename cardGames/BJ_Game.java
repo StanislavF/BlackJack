@@ -5,19 +5,20 @@ import java.util.Scanner;
 
 public class BJ_Game {
 	static Scanner sc=new Scanner(System.in);
-	public static BJ_Hand[] playerHand = new BJ_Hand[4];
-	public static int compResult;
-	public static BJ_Hand compHand = new BJ_Hand();
-	public static int splitCount=0, currentHand=0;
-	public static int[] playerResult={0,0,0,0};
+	static BJ_Hand[] playerHand = new BJ_Hand[4];
+	static int compResult;
+	static BJ_Hand compHand = new BJ_Hand();
+	static int splitCount=0, currentHand=0;
+	static int[] playerResult={0,0,0,0};
 	
 	public static void main(String [] args){
 		playerHand[0]=BJ_Hand.newHand();
 		System.out.println("Welcome player!!! \n"
 				+ "Computers firstcard is: " + compHand.getCard(0) + "\n\n");
 		System.out.println("And yor hand is:\n" + playerHand[currentHand]);
-		for(;currentHand<=splitCount;currentHand++){// Counts the number of Splits max(4)
-							    // After each split start again from the first hand
+		// Counts the number of Splits max(4)
+	    	// After each split start again from the first hand
+		for(;currentHand<=splitCount;currentHand++){
 			while(playerResult[currentHand]<21){// Breaks when the player is bustet or holds
 				System.out.println("You can choose between: hit, hold");
 				if(playerHand[0].hand.size()==2 && currentHand==0){ //Allows the player to split
@@ -28,8 +29,8 @@ public class BJ_Game {
 				}
 				String playerChoice=sc.nextLine();
 				playerChoice=playerChoice.toLowerCase();
+				//Checks if the input is right
 				while(!playerChoice.equals("hit") && !playerChoice.equals("hold") && !playerChoice.equals("split") ){
-					//Checks if the input is right
 					System.out.println("Wrong input");
 					System.out.println("You can choose between: hit, hold");
 					if(playerHand[0].hand.size()==2 && currentHand==0){
@@ -46,6 +47,7 @@ public class BJ_Game {
 				}
 				playerResult[currentHand]=GameActions.resultCalculator(playerHand[currentHand]);
 				if(playerChoice.equals("hold")) break;
+				// creates new hand for the player if he/she has choosen to split
 				if(playerChoice.equals("split")){
 					if(splitCount>3){
 						System.out.println("You can split maximum 3 times");
@@ -61,6 +63,7 @@ public class BJ_Game {
 			
 		}
 		
+		// calculating Computees reuslt
 		compResult=GameActions.compAction(compHand);
 		
 		System.out.println("Computer Hand is:");
@@ -73,6 +76,8 @@ public class BJ_Game {
 			if(splitCount==0){
 				System.out.println("Your result is " + playerResult[i]);
 			}
+			
+			// determining who is the winner
 			if(playerResult[i]>21) System.out.println("Sorry player, you lost");
 			else if (compResult>21) System.out.println("Congratulations player!!! You won !!!");
 				else if(compResult <playerResult[i]) System.out.println("Congratulations player!!! You won !!!");
