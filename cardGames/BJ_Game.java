@@ -21,7 +21,7 @@ public class BJ_Game {
 		for(;currentHand<=splitCount;currentHand++){
 			while(playerResult[currentHand]<21){// Breaks when the player is bustet or holds
 				System.out.println("You can choose between: hit, hold");
-				if(playerHand[0].hand.size()==2 && currentHand==0){ //Allows the player to split
+				if(playerHand[0].getHand().size()==2 && currentHand==0){ //Allows the player to split
   										    //if he has 2 cards of equivalent value
 					if(Card.equalsNum(playerHand[currentHand].getCard(0), playerHand[currentHand].getCard(1))){
 						System.out.println("You can split too");
@@ -33,7 +33,7 @@ public class BJ_Game {
 				while(!playerChoice.equals("hit") && !playerChoice.equals("hold") && !playerChoice.equals("split") ){
 					System.out.println("Wrong input");
 					System.out.println("You can choose between: hit, hold");
-					if(playerHand[0].hand.size()==2 && currentHand==0){
+					if(playerHand[0].getHand().size()==2 && currentHand==0){
 						if(Card.equalsNum(playerHand[currentHand].getCard(0), playerHand[currentHand].getCard(1))){
 							System.out.println("You can split too");
 						}
