@@ -4,7 +4,7 @@ import cardGames.BJ_Game;
 
 public class GameActions {
 
-
+	//Estimates if the computer has to draw new cards
 	public static int compAction (BJ_Hand compHand){
 		int compResult=resultCalculator(compHand);
 		while(compResult<=16){
@@ -15,9 +15,10 @@ public class GameActions {
 		return compResult;
 	}
 	
+	//Calculates the result based on the cards
 	public static int resultCalculator(BJ_Hand hand){
 		int plResult=0, aceFlag=0;
-		for(int i=0;i < hand.hand.size();i++){
+		for(int i=0;i < hand.getHand.size();i++){
 			if(hand.getCard(i).getRank()==1){ 
 				aceFlag++;
 				continue;
