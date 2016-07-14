@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class BJ_Hand {
-	public ArrayList<Card> hand=new ArrayList<Card>();
+	private ArrayList<Card> hand=new ArrayList<Card>();
 	
 	public BJ_Hand(Card card){
 		hand.add(card);
@@ -20,6 +20,10 @@ public class BJ_Hand {
 	public static BJ_Hand newHand(){
 		BJ_Hand nHand = new BJ_Hand();
 		return nHand;
+	}
+	
+	public ArrayList<Card> getHand(){
+		return this.hand;
 	}
 	
 	public String toString(){
